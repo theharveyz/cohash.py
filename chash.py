@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from binascii import crc32
 
 """consistent hash: 一致性hash算法,python实现
@@ -11,7 +9,7 @@ from binascii import crc32
 """
 
 class CHash(object):
-
+    __VERSION__ = '0.1.0'
 	# virtual nodes
 	_vnodes = dict()
 
@@ -21,9 +19,9 @@ class CHash(object):
 
 	def __init__(self, nodes = [], vnum = 0):
 		if not nodes:
-			raise ValueError('nodes must be a list object')
+			raise TypeError('nodes must be a list object and should be not empty')
 		if not (u"%s" % vnum).isnumeric():
-			raise ValueError('nodes must be a number')
+			raise TypeError('nodes must be a number')
 
 		self._nodes = set(nodes) # convert a set
 		nl = len(self._nodes)
@@ -46,9 +44,13 @@ class CHash(object):
 	def _find_node(self, key):
 		key = CHash._crc32(key)
 		position = 0
-		# 从大到小排序
+		# 从小到大排序
 		for k in sorted(self._vnodes.keys()):
 			position = k
 			if key < k:
 				return self._vnodes[k]
 		return self._vnodes[position]
+
+    @classmethod
+    def get_version(cls):
+        return cls.__VERSION__

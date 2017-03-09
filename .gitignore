@@ -1,3 +1,9 @@
 .DS_Store
 /.idea
 *.log
+*.egg-info
+*.pot
+*.py[co]
+tests/coverage_html/
+tests/.coverage
+build/

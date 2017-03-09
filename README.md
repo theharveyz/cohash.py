@@ -1,2 +1,2 @@
 # chash.py
-Consistency hash algorithm python implementation
+Consistency hash algorithm implementation in Python
