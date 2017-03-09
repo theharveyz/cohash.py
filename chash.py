@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from binascii import crc32
 
 """consistent hash: 一致性hash算法,python实现
@@ -9,47 +10,47 @@ from binascii import crc32
 """
 
 class CHash(object):
+
     __VERSION__ = '0.1.0'
-	# virtual nodes
-	_vnodes = dict()
 
-	_nodes = []
+    # virtual nodes
+    _vnodes = dict()
+    _nodes = []
+    _vnum = 0
 
-	_vnum = 0
+    def __init__(self, nodes = [], vnum = 0):
+        if not nodes:
+            raise TypeError('nodes must be a list object and should be not empty')
+        if not (u"%s" % vnum).isnumeric():
+            raise TypeError('nodes must be a number')
 
-	def __init__(self, nodes = [], vnum = 0):
-		if not nodes:
-			raise TypeError('nodes must be a list object and should be not empty')
-		if not (u"%s" % vnum).isnumeric():
-			raise TypeError('nodes must be a number')
+        self._nodes = set(nodes) # convert a set
+        nl = len(self._nodes)
+        vnum = int(vnum)
+        self._vnum = nl if vnum <= nl else vnum
 
-		self._nodes = set(nodes) # convert a set
-		nl = len(self._nodes)
-		vnum = int(vnum)
-		self._vnum = nl if vnum <= nl else vnum
+    def gen(self, key):
+        self._creat_vnodes()
+        return self._find_node(key)
 
-	def gen(self, key):
-		self._creat_vnodes()
-		return self._find_node(key)
+    def _creat_vnodes(self):
+        for node in self._nodes:
+            for i in xrange(self._vnum):
+                self._vnodes[CHash._crc32("%i-%s" % (i, node))] = node
 
-	def _creat_vnodes(self):
-		for node in self._nodes:
-			for i in xrange(self._vnum):
-				self._vnodes[CHash._crc32("%i-%s" % (i, node))] = node
+    @staticmethod
+    def _crc32(key):
+        return abs(crc32(key))
 
-	@staticmethod
-	def _crc32(key):
-		return abs(crc32(key))
-
-	def _find_node(self, key):
-		key = CHash._crc32(key)
-		position = 0
-		# 从小到大排序
-		for k in sorted(self._vnodes.keys()):
-			position = k
-			if key < k:
-				return self._vnodes[k]
-		return self._vnodes[position]
+    def _find_node(self, key):
+        key = CHash._crc32(key)
+        position = 0
+        # 从小到大排序
+        for k in sorted(self._vnodes.keys()):
+            position = k
+            if key < k:
+                return self._vnodes[k]
+        return self._vnodes[position]
 
     @classmethod
     def get_version(cls):
