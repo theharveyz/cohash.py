@@ -14,22 +14,22 @@ Install
 
 .. code-block:: shell
 
-pip install cohash
+    pip install cohash
 
 Usage
 ------------
 
 .. code-block:: python
-
-import cohash
-ch = cohash.Hash(nodes = [
-    '192.168.01',
-    '192.168.02',
-    '192.168.03',
-    '192.168.04',
-], vnum = 1000)
-key = 'random-key'
-print ch.gen(key)
+    
+    import cohash
+    ch = cohash.Hash(nodes = [
+        '192.168.01',
+        '192.168.02',
+        '192.168.03',
+        '192.168.04',
+    ], vnum = 1000)
+    key = 'random-key'
+    print ch.gen(key)
 
 LICENSE
 ------------
