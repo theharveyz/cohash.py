@@ -6,11 +6,11 @@ python:
   - "3.6"
 
 before_install:
-  - pip install --upgrade pip setuptools six pytest
+  - pip install --upgrade pip setuptools six
 
 # install: 
-#   - pip install --upgrade pip setuptools six
-  # - pip install tox
+  - pip install --upgrade -r ./requirements.txt
+
 script:
   - python setup.py flake8
   - pytest ./cohash_test.py
