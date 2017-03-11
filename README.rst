@@ -12,13 +12,15 @@ Consistency hash algorithm implementation in Python
 Install
 ------------
 
-.. code-block:: python
+.. code-block:: shell
+
 pip install cohash
 
 Usage
 ------------
 
 .. code-block:: python
+
 import cohash
 ch = cohash.Hash(nodes = [
     '192.168.01',
