@@ -15,11 +15,12 @@ except ImportError:
 
 here = os.path.abspath(dirname(__file__))
 
-with codecs.open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
+with codecs.open(os.path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = '\n' + f.read()
 
 # easily publish
 if sys.argv[-1] == "publish":
+    os.system("rm -rf ./dist")
     os.system("python setup.py sdist")
     os.system("python setup.py bdist_wheel --universal")
     os.system("twine upload dist/*")

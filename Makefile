@@ -2,7 +2,7 @@ ENV_DIR=cohash-venv
 
 init:
 	@( \
-		pip install --upgrade pip setuptools; \
+		pip install --upgrade pip setuptools twine; \
 		pip install virtualenv; \
 		virtualenv  $(ENV_DIR) ;\
 	)
