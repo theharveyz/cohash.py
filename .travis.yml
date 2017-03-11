@@ -7,5 +7,5 @@ python:
 before_install:
   - pip install --upgrade pip setuptools
 
-install: pip install -U tox tox-travis
+install: pip install -U tox
 script: tox
