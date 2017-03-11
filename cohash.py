@@ -10,7 +10,7 @@ from binascii import crc32
 """
 
 
-class CHash(object):
+class Hash(object):
     __VERSION__ = '0.1.0'
 
     # virtual nodes
@@ -36,7 +36,7 @@ class CHash(object):
     def _creat_vnodes(self):
         for node in self._nodes:
             for i in xrange(self._vnum):
-                self._vnodes[CHash._crc32("%i-%s" % (i, node))] = node
+                self._vnodes[Hash._crc32("%i-%s" % (i, node))] = node
 
     @staticmethod
     def _crc32(key):
@@ -44,7 +44,7 @@ class CHash(object):
         return abs(crc32(key))
 
     def _find_node(self, key):
-        key = CHash._crc32(key)
+        key = Hash._crc32(key)
         position = 0
         #  从小到大排序
         for k in sorted(self._vnodes.keys()):

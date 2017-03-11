@@ -8,7 +8,7 @@ tests/coverage_html/
 tests/.coverage
 build/
 dist/
-chash-venv
+cohash-venv
 .tox
 __pycache__
 .cache

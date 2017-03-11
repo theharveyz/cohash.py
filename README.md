@@ -1,15 +1,15 @@
-# chash.py [![Build Status](https://travis-ci.org/theharveyz/chash.py.svg?branch=master)](https://travis-ci.org/theharveyz/chash.py)
+# cohash.py [![Build Status](https://travis-ci.org/theharveyz/cohash.py.svg?branch=master)](https://travis-ci.org/theharveyz/cohash.py)
 Consistency hash algorithm implementation in Python
 
 # Install
 ```
-pip install chash
+pip install cohash
 ```
 
 # Usage
 ```
-import chash
-ch = chash.CHash(nodes = [
+import cohash
+ch = cohash.Hash(nodes = [
     '192.168.01',
     '192.168.02',
     '192.168.03',

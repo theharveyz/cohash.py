@@ -1,6 +1,6 @@
 [run]
 branch = True
-source = chash
+source = cohash
 
 [html]
 directory = coverage

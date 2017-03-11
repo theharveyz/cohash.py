@@ -1,4 +1,4 @@
-ENV_DIR=chash-venv
+ENV_DIR=cohash-venv
 
 init:
 	@( \
