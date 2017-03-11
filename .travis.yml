@@ -4,14 +4,14 @@ python:
   - "2.7"
 
 before_install:
-  - pip install --upgrade pip setuptools six
+  - pip install --upgrade pip setuptools six pytest
 
 # install: 
 #   - pip install --upgrade pip setuptools six
   # - pip install tox
 script:
   - python setup.py flake8
-  - pytest
+  - pytest ./cohash_test.py
   - coverage erase
   - coverage run cohash_test.py
   - coverage report
