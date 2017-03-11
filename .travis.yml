@@ -7,9 +7,6 @@ python:
 before_install:
   - pip install --upgrade pip setuptools six
 
-# install: 
-  - pip install --upgrade -r ./requirements.txt
-
 script:
   - python setup.py flake8
   - pytest ./cohash_test.py
