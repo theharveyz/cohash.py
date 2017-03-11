@@ -1,8 +1,8 @@
 cohash.py 
 ==================
 
-.. image:: https://badge.fury.io/py/cohash.svg
-    :target: https://badge.fury.io/py/cohash
+.. image:: https://badge.fury.io/py/cohash.svg?1
+    :target: https://badge.fury.io/py/cohash?1
 
 .. image:: https://travis-ci.org/theharveyz/cohash.py.svg?branch=master
     :target: https://travis-ci.org/theharveyz/cohash.py
