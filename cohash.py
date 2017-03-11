@@ -11,7 +11,7 @@ from binascii import crc32
 
 
 class Hash(object):
-    __VERSION__ = '0.1.2'
+    __VERSION__ = '0.1.3'
 
     # virtual nodes
     _vnodes = dict()
