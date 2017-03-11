@@ -12,3 +12,5 @@ chash-venv
 .tox
 __pycache__
 .cache
+.coverage
+coverage
