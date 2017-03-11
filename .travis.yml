@@ -3,8 +3,10 @@ language: python
 python:
   - "2.7"
 
-before_install:
-  - pip install --upgrade pip setuptools
+# before_install:
+#   - pip install --upgrade pip setuptools
 
-install: pip install tox
+install: 
+  - pip install --upgrade pip setuptools six
+  - pip install tox
 script: tox

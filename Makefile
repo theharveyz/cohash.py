@@ -4,7 +4,6 @@ init:
 	@( \
 		pip install --upgrade pip setuptools; \
 		pip install virtualenv; \
-		pip install pyenv; \
 		virtualenv  $(ENV_DIR) ;\
 	)
 
