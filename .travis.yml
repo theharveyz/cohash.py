@@ -3,10 +3,15 @@ language: python
 python:
   - "2.7"
 
-# before_install:
-#   - pip install --upgrade pip setuptools
-
-install: 
+before_install:
   - pip install --upgrade pip setuptools six
-  - pip install tox
-script: tox
+
+# install: 
+#   - pip install --upgrade pip setuptools six
+  # - pip install tox
+script:
+  - python setup.py flake8
+  - pytest cohash_test.py
+  - coverage erase
+  - coverage run cohash_test.py
+  - coverage report
