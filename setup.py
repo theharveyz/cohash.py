@@ -19,7 +19,7 @@ with codecs.open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = '\n' + f.read()
 
 # easily publish
-if sys.argv[-1] is "publish":
+if sys.argv[-1] == "publish":
     os.system("python setup.py sdist upload")
     sys.exit()
 
