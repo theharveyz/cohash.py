@@ -19,8 +19,8 @@ with codecs.open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = '\n' + f.read()
 
 # easily publish
-if sys.argv[-1] == "publish":
-    os.system("python setup.py sdist bdist_wheel upload")
+if sys.argv[-1] is "publish":
+    os.system("python setup.py sdist upload")
     sys.exit()
 
 
@@ -29,7 +29,7 @@ setup(
     version=CHash.get_version(),
     description='Consistency hash algorithm implementation in Python.',
     long_description=long_description,
-    author='HarveyZ',
+    author='harveyz',
     author_email='zharvey@163.com',
     url='https://github.com/theharveyz/chash.py',
     py_modules=['chash'], # 用于小模块发布,比如当前模块只有根目录的chash模块需要发布时
@@ -38,6 +38,7 @@ setup(
     # package_dir = {'': 'lib'}, # 同样也是指定包
     # install_requires=required,
     license='MIT',
+    # scripts= [],#指定python源码文件，可以从命令行执行。在安装时指定--install-script
     classifiers=(
 
     ),

@@ -5,6 +5,9 @@ def test_crc32():
     foo = 'foo'
     i = 1
     assert CHash._crc32(foo) == abs(-1938594527)
+    print CHash._crc32(i)
+    print CHash._crc32('%s' % i)
+
     assert CHash._crc32(i) == CHash._crc32('%s' % i) == abs(-2082672713)
 
 def test_exceptions():
@@ -12,14 +15,14 @@ def test_exceptions():
         ch = CHash([])
     except TypeError, e:
         assert e.message.find('list')
-    finally:
+    else:
         assert False
 
     try:
         ch = CHash(['a'], 'a')
     except TypeError, e:
         assert e.message.find('number')
-    finally:
+    else:
         assert False
 
 def test_gen():

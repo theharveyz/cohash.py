@@ -40,6 +40,7 @@ class CHash(object):
 
     @staticmethod
     def _crc32(key):
+        key = str(key)
         return abs(crc32(key))
 
     def _find_node(self, key):
