@@ -11,7 +11,7 @@ before_install:
   # - pip install tox
 script:
   - python setup.py flake8
-  - pytest cohash_test.py
+  - pytest
   - coverage erase
   - coverage run cohash_test.py
   - coverage report
