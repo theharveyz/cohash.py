@@ -5,7 +5,7 @@ python:
   - "2.7"
 
 before_install:
-  - pip install --upgrade pip setuptools six
+  - pip install --upgrade pip setuptools six pytest
 
 script:
   - python setup.py flake8
