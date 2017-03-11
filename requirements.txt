@@ -2,3 +2,4 @@ pytest
 tox
 coverage
 flake8
+pyenv

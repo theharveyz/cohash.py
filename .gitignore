@@ -10,3 +10,5 @@ build/
 dist/
 chash-venv
 .tox
+__pycache__
+.cache

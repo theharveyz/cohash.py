@@ -32,9 +32,9 @@ setup(
     author='harveyz',
     author_email='zharvey@163.com',
     url='https://github.com/theharveyz/chash.py',
-    py_modules=['chash'], # 用于小模块发布,比如当前模块只有根目录的chash模块需要发布时
+    py_modules=['chash'],  # 用于小模块发布,比如当前模块只有根目录的chash模块需要发布时
     # packages=find_packages(exclude=EXCLUDE_FROM_PACKAGES), # 指定好要发布的包
-    # include_package_data=True, # 包中的文件是否涵盖, 往往会包含一些希望python模板文件,但是使用时不能import的文件
+    # include_package_data=True,包中的文件是否涵盖, 往往会包含一些希望python模板文件,但是使用时不能import的文件
     # package_dir = {'': 'lib'}, # 同样也是指定包
     # install_requires=required,
     license='MIT',

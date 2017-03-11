@@ -9,8 +9,8 @@ from binascii import crc32
 3. 降低分散性
 """
 
-class CHash(object):
 
+class CHash(object):
     __VERSION__ = '0.1.0'
 
     # virtual nodes
@@ -18,13 +18,13 @@ class CHash(object):
     _nodes = []
     _vnum = 0
 
-    def __init__(self, nodes = [], vnum = 0):
+    def __init__(self, nodes=[], vnum=0):
         if not nodes:
-            raise TypeError('nodes must be a list object and should be not empty')
+            raise TypeError('nodes must be a list object and not empty')
         if not (u"%s" % vnum).isnumeric():
             raise TypeError('nodes must be a number')
 
-        self._nodes = set(nodes) # convert a set
+        self._nodes = set(nodes)  # convert a set
         nl = len(self._nodes)
         vnum = int(vnum)
         self._vnum = nl if vnum <= nl else vnum
@@ -46,7 +46,7 @@ class CHash(object):
     def _find_node(self, key):
         key = CHash._crc32(key)
         position = 0
-        # 从小到大排序
+        #  从小到大排序
         for k in sorted(self._vnodes.keys()):
             position = k
             if key < k:
