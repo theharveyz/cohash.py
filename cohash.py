@@ -11,7 +11,7 @@ from binascii import crc32
 
 
 class Hash(object):
-    __VERSION__ = '0.1.3'
+    __VERSION__ = '0.1.4'
 
     # virtual nodes
     _vnodes = dict()
@@ -29,8 +29,9 @@ class Hash(object):
         vnum = int(vnum)
         self._vnum = nl if vnum <= nl else vnum
 
-    def gen(self, key):
         self._creat_vnodes()
+
+    def gen(self, key):
         return self._find_node(key)
 
     def _creat_vnodes(self):
